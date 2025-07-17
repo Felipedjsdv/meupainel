@@ -1,0 +1,11 @@
+
+{% extends 'layout.html' %}{% block conteudo %}
+<h2>Testes</h2>
+<form method="POST" action="/gerar" class="mb-3">
+  <button class="btn btn-primary"><i class="bi bi-plus-circle"></i> Gerar Teste</button>
+</form>
+<table class="table table-bordered">
+  <thead><tr><th>Usuário</th><th>Senha</th><th>Expiração</th></tr></thead>
+  <tbody>{% for t in testes %}<tr><td>{{ t[2] }}</td><td>{{ t[3] }}</td><td>{{ t[4] }}</td></tr>{% endfor %}</tbody>
+</table>
+{% endblock %}
