@@ -1,10 +1,11 @@
 
 from flask import Flask, render_template, request, redirect, session
 import sqlite3, random, requests
+import os
 
 app = Flask(__name__)
 app.secret_key = 'chave_super_secreta'
-API_KEY = 'SUA_API_KEY_AQUI'
+API_KEY = os.getenv('NATV_API_KEY')
 
 def criar_banco():
     with sqlite3.connect('banco.db') as conn:
